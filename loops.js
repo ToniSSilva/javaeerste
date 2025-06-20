@@ -1,3 +1,6 @@
+//
+    if (import.meta.main) {//
+
 // ==========================================
 // Opdracht 1. Maak een for loop die het volgende patroon in de terminal print:
 // Verwachte uitkomsten:
@@ -9,7 +12,11 @@
 
 // Tip: je kunt de .repeat() methode gebruiken om een karakter een n aantal keer te herhalen... Dit heb je nog niet geleerd, maar bekijk hiervoor dit MDN-artikel eens: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 // ==========================================
+// Opdracht 1
 
+    for (let i = 1; i <= 5; i++) {
+    console.log("*".repeat(i));
+}
 
 // ==========================================
 // Opdracht 2. Maak een for-loop die 4 keer het woord "loop..." logt, en bij de laatste (vijfde) loop het woord "klaar!"
@@ -21,6 +28,10 @@
 // klaar!
 // ==========================================
 
+// Opdracht 2
+    for (let i = 0; i < 5; i++) {
+    console.log(i === 4 ? "klaar!" : "loop...");
+}
 
 // ==========================================
 // Opdracht 3. Maak een for-loop die automatisch factuurnummers genereert in het formaat INV-0001, INV-0002, enzovoorts. Zorg ervoor dat je begint bij nummer 1 en dat de nummers oplopen. Er zijn in totaal 8 factuurnummers nodig.
@@ -37,6 +48,10 @@
 
 // ==========================================
 
+// Opdracht 3
+    for (let n = 1; n <= 8; n++) {
+    console.log(`INV-${String(n).padStart(4, "0")}`);
+}
 // ==========================================
 // Opdracht 4. Schrijf een for-loop die van 9 tot en met 18 loopt en de uren logt.
 // - Bij 10:00 en 14:00 moet de tekst "Koffiepauze!" toegevoegd worden
@@ -56,6 +71,14 @@
 // 18:00
 // ==========================================
 
+// Opdracht 4
+    for (let h = 9; h <= 18; h++) {
+    let line = `${h}:00`;
+    if (h === 10 || h === 14) line += " Koffiepauze!";
+    if (h === 12) line += " Lunchpauze!";
+    if (h === 17) line += " Bijna klaar...";
+    console.log(line);
+}
 
 // ==========================================
 // Opdracht 5. Maak een for-loop die van 0 tot 9 loopt en de getallen 0 tot 9 logt.
@@ -73,6 +96,11 @@
 // >> 9
 // ==========================================
 
+// Opdracht 5
+    for (let n = 0; n < 10; n++) {
+    const prefix = n >= 6 ? ">> " : n >= 3 ? "> " : "";
+    console.log(prefix + n);
+}
 
 // ==========================================
 // Opdracht 6 (BONUS). Schrijf een for-loop die van 0 tot 100 loopt en de getallen print.
@@ -113,4 +141,62 @@
 // ==========================================
 
 
+// Opdracht 6 (BONUS)
+    for (let n = 1; n <= 100; n++) {
+    const fizz = n % 3 === 0;
+    const buzz = n % 5 === 0;
+    console.log(
+        fizz && buzz ? "FizzBuzz"
+            : fizz        ? "Fizz"
+                : buzz        ? "Buzz"
+                    : n
+    );
+}
 
+
+   ============================================
+
+
+if (import.meta.main) {
+    // Opdracht 1
+    for (let i = 1; i <= 5; i++) {
+        console.log("*".repeat(i));
+    }
+
+    // Opdracht 2
+    for (let i = 0; i < 5; i++) {
+        console.log(i === 4 ? "klaar!" : "loop...");
+    }
+
+    // Opdracht 3
+    for (let n = 1; n <= 8; n++) {
+        console.log(`INV-${String(n).padStart(4, "0")}`);
+    }
+
+    // Opdracht 4
+    for (let h = 9; h <= 18; h++) {
+        let line = `${h}:00`;
+        if (h === 10 || h === 14) line += " Koffiepauze!";
+        if (h === 12) line += " Lunchpauze!";
+        if (h === 17) line += " Bijna klaar...";
+        console.log(line);
+    }
+
+    // Opdracht 5
+    for (let n = 0; n < 10; n++) {
+        const prefix = n >= 6 ? ">> " : n >= 3 ? "> " : "";
+        console.log(prefix + n);
+    }
+
+    // Opdracht 6 (BONUS)
+    for (let n = 1; n <= 100; n++) {
+        const fizz = n % 3 === 0;
+        const buzz = n % 5 === 0;
+        console.log(
+            fizz && buzz ? "FizzBuzz"
+                : fizz        ? "Fizz"
+                    : buzz        ? "Buzz"
+                        : n
+        );
+    }
+}
